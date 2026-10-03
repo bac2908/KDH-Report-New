@@ -1,0 +1,14 @@
+{% for row in ads.campaigns %}
+<tr data-campaign-id="{{ row.id }}">
+  <td><button type="button" class="fb-campaign-link" data-campaign-detail="{{ row.id }}">{{ row.name }}</button><div class="fb-muted fb-small">ID: {{ row.id }} · {{ row.status_label }}</div></td>
+  <td><span class="fb-tag">{{ row.objective }}</span></td>
+  <td class="fb-number"><strong>{{ row.display.spend }}</strong><div class="fb-muted fb-small">Ngân sách: {{ row.display.budget }}</div></td>
+  <td class="fb-number">{{ row.display.reach }}</td>
+  <td class="fb-number">{{ row.display.clicks }}<div class="fb-muted fb-small">{{ row.display.ctr }}</div></td>
+  <td class="fb-number fb-blue"><strong>{{ row.display.leads }}</strong></td>
+  <td class="fb-number"><strong class="{{ 'fb-red' if row.status == 'attention' else 'fb-green' }}">{{ row.display.cpl }}</strong></td>
+  <td><span class="fb-status {{ 'attention' if row.status == 'attention' else 'healthy' }}">{{ row.performance }}</span></td>
+</tr>
+{% else %}
+<tr><td colspan="8" class="fb-empty">Không có chiến dịch phù hợp. Hãy xóa hoặc thay đổi bộ lọc.</td></tr>
+{% endfor %}

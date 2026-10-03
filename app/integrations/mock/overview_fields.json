@@ -1,0 +1,182 @@
+{
+  "reach": {
+    "text": "482.350",
+    "scalable": true
+  },
+  "reach_previous": {
+    "text": "vs 416.530 kỳ trước",
+    "scalable": true
+  },
+  "traffic": {
+    "text": "68.420",
+    "scalable": true
+  },
+  "traffic_previous": {
+    "text": "vs 55.890 kỳ trước",
+    "scalable": true
+  },
+  "engagement": {
+    "text": "34.190",
+    "scalable": true
+  },
+  "engagement_previous": {
+    "text": "vs 31.330 kỳ trước",
+    "scalable": true
+  },
+  "leads": {
+    "text": "1.247",
+    "scalable": true
+  },
+  "spend": {
+    "text": "48.650.000 ₫",
+    "scalable": true
+  },
+  "channel_0_0": {
+    "text": "32.180",
+    "scalable": true
+  },
+  "channel_0_1": {
+    "text": "39.840",
+    "scalable": true
+  },
+  "channel_0_2": {
+    "text": "420.500",
+    "scalable": true
+  },
+  "channel_0_3": {
+    "text": "148",
+    "scalable": false
+  },
+  "channel_0_summary": {
+    "text": "412 Leads (↑ 19,5%)",
+    "scalable": true
+  },
+  "channel_1_0": {
+    "text": "184.200",
+    "scalable": true
+  },
+  "channel_1_1": {
+    "text": "16.850",
+    "scalable": true
+  },
+  "channel_1_2": {
+    "text": "9,15%",
+    "scalable": false
+  },
+  "channel_1_3": {
+    "text": "+850 Fan",
+    "scalable": true
+  },
+  "channel_1_summary": {
+    "text": "4.120 clicks",
+    "scalable": true
+  },
+  "channel_2_0": {
+    "text": "26.400.000 ₫",
+    "scalable": true
+  },
+  "channel_2_1": {
+    "text": "142.000",
+    "scalable": true
+  },
+  "channel_2_2": {
+    "text": "8.920",
+    "scalable": true
+  },
+  "channel_2_3": {
+    "text": "54.432 ₫",
+    "scalable": false
+  },
+  "channel_2_summary": {
+    "text": "485 Leads thành công",
+    "scalable": true
+  },
+  "channel_3_0": {
+    "text": "14.800.000 ₫",
+    "scalable": true
+  },
+  "channel_3_1": {
+    "text": "295.000",
+    "scalable": true
+  },
+  "channel_3_2": {
+    "text": "2,18%",
+    "scalable": false
+  },
+  "channel_3_3": {
+    "text": "68.837 ₫",
+    "scalable": false
+  },
+  "channel_3_summary": {
+    "text": "215 Leads (Clicks: 6.450)",
+    "scalable": true
+  },
+  "channel_4_0": {
+    "text": "42.600",
+    "scalable": true
+  },
+  "channel_4_1": {
+    "text": "1.840 giờ",
+    "scalable": true
+  },
+  "channel_4_2": {
+    "text": "+320 sub",
+    "scalable": true
+  },
+  "channel_4_3": {
+    "text": "6,8%",
+    "scalable": false
+  },
+  "channel_4_summary": {
+    "text": "980 clicks trực tiếp",
+    "scalable": true
+  },
+  "channel_5_0": {
+    "text": "28.400",
+    "scalable": true
+  },
+  "channel_5_1": {
+    "text": "480 cuộc",
+    "scalable": true
+  },
+  "channel_5_2": {
+    "text": "1.150 lượt",
+    "scalable": true
+  },
+  "channel_5_3": {
+    "text": "+82 đánh giá",
+    "scalable": true
+  },
+  "channel_5_summary": {
+    "text": "3.250 clicks",
+    "scalable": true
+  },
+  "contribution_total": {
+    "text": "1.247 Tổng Leads",
+    "scalable": true
+  },
+  "contribution_0": {
+    "text": "(474 Leads)",
+    "scalable": true
+  },
+  "contribution_1": {
+    "text": "(324 Leads)",
+    "scalable": true
+  },
+  "contribution_2": {
+    "text": "(187 Leads)",
+    "scalable": true
+  },
+  "contribution_3": {
+    "text": "(112 Leads)",
+    "scalable": true
+  },
+  "contribution_4": {
+    "text": "(87 Leads)",
+    "scalable": true
+  },
+  "contribution_5": {
+    "text": "(63 Leads)",
+    "scalable": true
+  }
+}

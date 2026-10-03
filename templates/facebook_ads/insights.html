@@ -1,0 +1,3 @@
+{% for title, icon, key in [('Điểm Nổi Bật', 'verified', 'highlights'), ('Vấn Đề Cần Chú Ý', 'report_problem', 'warnings'), ('Hành Động Đề Xuất', 'task_alt', 'actions')] %}
+<section class="panel fb-insight"><h2><span class="material-symbols-outlined" aria-hidden="true">{{ icon }}</span>{{ title }}</h2><ul>{% for text in ads.insights[key] %}<li>{{ text }}</li>{% else %}<li>Chưa có dữ liệu để đánh giá.</li>{% endfor %}</ul></section>
+{% endfor %}

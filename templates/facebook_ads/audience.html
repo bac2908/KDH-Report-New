@@ -1,0 +1,9 @@
+{% for row in ads.placements %}
+<div class="fb-placement"><div><span>{{ row.name }}</span><strong>{{ row.percent }}% ({{ row.text }})</strong></div><div class="fb-track"><span style="width: {{ row.percent }}%; background: {{ row.color }}"></span></div></div>
+{% endfor %}
+<div class="fb-audience-profile">
+  <h3><span class="material-symbols-outlined" aria-hidden="true">group</span> Hồ sơ đối tượng mẫu</h3>
+  {% if ads.campaigns %}<div class="fb-profile-grid"><div><span class="fb-muted fb-small">Giới tính tương tác</span><strong>Nữ (74%) · Nam (26%)</strong><p>Tệp phụ huynh trong mẫu thiết kế</p></div><div><span class="fb-muted fb-small">Độ tuổi tham chiếu</span><strong>28 – 42 tuổi</strong><p>Chưa kết nối dữ liệu nhân khẩu học thực tế</p></div></div>
+  {% else %}<p class="fb-muted">Không có dữ liệu cho bộ lọc này.</p>{% endif %}
+</div>
+<p class="fb-small fb-muted fb-placement-note">Phân bổ theo tỷ trọng minh họa 58/22/14/6. Reach của các chiến dịch mẫu giả định không trùng lặp.</p>

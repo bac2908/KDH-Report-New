@@ -1,0 +1,234 @@
+{
+  "fields": {
+    "impressions": {
+      "text": "420.500",
+      "kind": "number"
+    },
+    "clicks": {
+      "text": "39.840",
+      "kind": "number"
+    },
+    "users": {
+      "text": "32.180",
+      "kind": "number"
+    },
+    "top10": {
+      "text": "148",
+      "kind": "fixed"
+    },
+    "leads": {
+      "text": "412",
+      "kind": "number"
+    },
+    "cr": {
+      "text": "1,28%",
+      "kind": "fixed"
+    },
+    "funnel_impressions": {
+      "text": "420.5K",
+      "kind": "compact"
+    },
+    "funnel_clicks": {
+      "text": "39.8K",
+      "kind": "compact"
+    },
+    "funnel_users": {
+      "text": "32.1K",
+      "kind": "compact"
+    },
+    "funnel_views": {
+      "text": "14.2K",
+      "kind": "compact"
+    },
+    "funnel_leads": {
+      "text": "412",
+      "kind": "number"
+    },
+    "funnel_appointments": {
+      "text": "112",
+      "kind": "number"
+    },
+    "keyword_0_5": {
+      "text": "6.420",
+      "kind": "number"
+    },
+    "keyword_0_6": {
+      "text": "48.200",
+      "kind": "number"
+    },
+    "keyword_1_5": {
+      "text": "8.150",
+      "kind": "number"
+    },
+    "keyword_1_6": {
+      "text": "62.400",
+      "kind": "number"
+    },
+    "keyword_2_5": {
+      "text": "4.890",
+      "kind": "number"
+    },
+    "keyword_2_6": {
+      "text": "35.100",
+      "kind": "number"
+    },
+    "keyword_3_5": {
+      "text": "3.120",
+      "kind": "number"
+    },
+    "keyword_3_6": {
+      "text": "28.400",
+      "kind": "number"
+    },
+    "keyword_4_5": {
+      "text": "2.980",
+      "kind": "number"
+    },
+    "keyword_4_6": {
+      "text": "19.500",
+      "kind": "number"
+    },
+    "keyword_5_5": {
+      "text": "2.140",
+      "kind": "number"
+    },
+    "keyword_5_6": {
+      "text": "22.600",
+      "kind": "number"
+    },
+    "landing_0_1": {
+      "text": "12.450",
+      "kind": "number"
+    },
+    "landing_0_2": {
+      "text": "15.200",
+      "kind": "number"
+    },
+    "landing_0_3": {
+      "text": "184",
+      "kind": "number"
+    },
+    "landing_1_1": {
+      "text": "9.820",
+      "kind": "number"
+    },
+    "landing_1_2": {
+      "text": "11.400",
+      "kind": "number"
+    },
+    "landing_1_3": {
+      "text": "142",
+      "kind": "number"
+    },
+    "landing_2_1": {
+      "text": "5.640",
+      "kind": "number"
+    },
+    "landing_2_2": {
+      "text": "7.120",
+      "kind": "number"
+    },
+    "landing_2_3": {
+      "text": "64",
+      "kind": "number"
+    },
+    "landing_3_1": {
+      "text": "4.270",
+      "kind": "number"
+    },
+    "landing_3_2": {
+      "text": "6.100",
+      "kind": "number"
+    },
+    "landing_3_3": {
+      "text": "22",
+      "kind": "number"
+    }
+  },
+  "keywords": [
+    {
+      "keyword": "khám nhi tphcm",
+      "landing": "/dich-vu/phong-kham-nhi-khoa",
+      "previous": 5,
+      "position": 2,
+      "clicks": 6420,
+      "impressions": 48200,
+      "ctr": "13.3%"
+    },
+    {
+      "keyword": "tiêm chủng cho bé",
+      "landing": "/tiem-chung/goi-vac-xin-cho-tre",
+      "previous": 4,
+      "position": 1,
+      "clicks": 8150,
+      "impressions": 62400,
+      "ctr": "13.0%"
+    },
+    {
+      "keyword": "gói khám sức khỏe tổng quát trẻ em",
+      "landing": "/dich-vu/kham-tong-quat-tre-em",
+      "previous": 8,
+      "position": 3,
+      "clicks": 4890,
+      "impressions": 35100,
+      "ctr": "13.9%"
+    },
+    {
+      "keyword": "bác sĩ tư vấn dinh dưỡng",
+      "landing": "/chuyen-khoa/dinh-duong-nhi",
+      "previous": 12,
+      "position": 6,
+      "clicks": 3120,
+      "impressions": 28400,
+      "ctr": "10.9%"
+    },
+    {
+      "keyword": "trung tâm tiêm chủng quận 1",
+      "landing": "/lien-he-co-so-quan-1",
+      "previous": 3,
+      "position": 2,
+      "clicks": 2980,
+      "impressions": 19500,
+      "ctr": "15.2%"
+    },
+    {
+      "keyword": "lịch tiêm chủng mở rộng cho bé",
+      "landing": "/kien-thuc/lich-tiem-chung-chuan",
+      "previous": 15,
+      "position": 8,
+      "clicks": 2140,
+      "impressions": 22600,
+      "ctr": "9.4%"
+    }
+  ],
+  "landings": [
+    {
+      "url": "/dich-vu/phong-kham-nhi-khoa",
+      "users": 12450,
+      "clicks": 15200,
+      "leads": 184,
+      "cr": "1.48%"
+    },
+    {
+      "url": "/tiem-chung/goi-vac-xin-cho-tre",
+      "users": 9820,
+      "clicks": 11400,
+      "leads": 142,
+      "cr": "1.44%"
+    },
+    {
+      "url": "/dich-vu/kham-tong-quat-tre-em",
+      "users": 5640,
+      "clicks": 7120,
+      "leads": 64,
+      "cr": "1.13%"
+    },
+    {
+      "url": "/kien-thuc/lich-tiem-chung-chuan",
+      "users": 4270,
+      "clicks": 6100,
+      "leads": 22,
+      "cr": "0.51%"
+    }
+  ]
+}

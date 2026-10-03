@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0051aa">
+  <title>{{ title }} | KDH Traffic Report</title>
+  <link rel="icon" href="/static/img/kdh-logo.png">
+  <link rel="stylesheet" href="/static/css/fonts.css">
+  <link rel="stylesheet" href="/static/css/dashboard.css">
+  {% block page_styles %}{% endblock %}
+  {% block page_script %}<script src="/static/js/overview.js" defer></script>{% endblock %}
+</head>
+<body class="bg-surface font-body-md text-body-md text-on-surface">
+<a class="skip-link" href="#main-content">Đến nội dung báo cáo</a>
+<aside class="fixed left-0 top-0 h-full w-[280px] bg-surface-container-lowest border-r border-outline-variant/40 z-50 flex flex-col justify-between shadow-[0_4px_20px_-2px_rgba(15,23,42,0.05)] dashboard-sidebar" id="dashboard-sidebar">
+ <div class="flex flex-col">
+  <div class="p-space-lg border-b border-outline-variant/30">
+   <a class="flex items-center gap-space-sm group" data-path="tong-quan-toan-bo-du-an" href="/overview">
+    <img alt="KDH Traffic Report Logo" class="h-8 w-auto object-contain" height="32" src="/static/img/kdh-logo.png" width="32"/>
+    <div class="flex flex-col">
+     <span class="font-title-sm text-title-sm text-primary tracking-tight">
+      KDH Traffic Report
+     </span>
+     <span class="font-label-sm text-label-sm text-on-surface-variant">
+      Executive Analytics Suite
+     </span>
+    </div>
+   </a>
+   <div class="mt-space-md p-space-sm bg-surface-container-low rounded-lg border border-outline-variant/40">
+    <div class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">
+     Khách hàng:
+    </div>
+    <div class="font-title-sm text-body-sm font-semibold text-on-surface truncate">
+     KinderHealth (Nhi khoa &amp; Tiêm chủng)
+    </div>
+   </div>
+  </div>
+  <div class="px-space-md pt-space-lg pb-space-xs">
+   <span class="px-space-xs font-label-sm text-label-sm text-outline tracking-wider uppercase">
+    CHỌN BÁO CÁO
+   </span>
+  </div>
+  <nav aria-label="Báo cáo theo kênh" class="flex flex-col gap-1 px-space-sm" data-active-classes="bg-surface-container-high text-primary font-semibold border-r-4 border-primary">
+   <div class="relative group">
+    <a class="flex items-center justify-between px-space-md py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all" data-path="seo-va-luu-luong-website" href="/report/seo" {% if active_report == 'seo' %}aria-current="page"{% endif %}>
+     <div class="flex items-center gap-space-sm">
+      <span aria-hidden="true" class="material-symbols-outlined text-[18px] text-primary">
+       search_insights
+      </span>
+      <span class="font-body-md text-body-md">
+       SEO &amp; Lưu lượng Website
+      </span>
+     </div>
+     <span aria-hidden="true" class="material-symbols-outlined text-[16px] text-outline group-hover:translate-x-0.5 transition-transform">
+      chevron_right
+     </span>
+    </a>
+    <div class="absolute left-[272px] top-0 hidden group-hover:flex flex-col w-64 bg-surface-container-lowest border border-outline-variant/50 rounded-xl shadow-[0_12px_32px_-4px_rgba(15,23,42,0.12)] p-2 z-50 seo-submenu">
+     <div class="px-3 py-2 font-label-sm text-label-sm text-outline uppercase border-b border-outline-variant/30 mb-1">
+      Báo cáo chuyên sâu SEO
+     </div>
+     <a class="flex items-center gap-2 px-3 py-2 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-body-sm text-body-sm" data-path="tong-quan-hieu-qua" href="/report/seo?view=tong-quan-hieu-qua">
+      <span aria-hidden="true" class="material-symbols-outlined text-[16px] text-primary">
+       bar_chart
+      </span>
+      Tổng quan hiệu quả
+     </a>
+     <a class="flex items-center gap-2 px-3 py-2 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-body-sm text-body-sm" data-path="hieu-qua-seo" href="/report/seo?view=hieu-qua-seo">
+      <span aria-hidden="true" class="material-symbols-outlined text-[16px] text-primary">
+       trending_up
+      </span>
+      Hiệu quả SEO
+     </a>
+     <a class="flex items-center gap-2 px-3 py-2 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-body-sm text-body-sm" data-path="thu-hang-tu-khoa" href="/report/seo?view=thu-hang-tu-khoa">
+      <span aria-hidden="true" class="material-symbols-outlined text-[16px] text-primary">
+       key
+      </span>
+      Thứ hạng từ khóa
+     </a>
+     <a class="flex items-center gap-2 px-3 py-2 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-body-sm text-body-sm" data-path="hieu-qua-trang-dich" href="/report/seo?view=hieu-qua-trang-dich">
+      <span aria-hidden="true" class="material-symbols-outlined text-[16px] text-primary">
+       description
+      </span>
+      Hiệu quả trang đích
+     </a>
+     <a class="flex items-center gap-2 px-3 py-2 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-body-sm text-body-sm" data-path="phan-tich-luu-luong-truy-cap" href="/report/seo?view=phan-tich-luu-luong-truy-cap">
+      <span aria-hidden="true" class="material-symbols-outlined text-[16px] text-primary">
+       group
+      </span>
+      Phân tích lưu lượng truy cập
+     </a>
+     <a class="flex items-center gap-2 px-3 py-2 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-body-sm text-body-sm" data-path="chuyen-doi-va-khach-hang-tiem-nang" href="/report/seo?view=chuyen-doi-va-khach-hang-tiem-nang">
+      <span aria-hidden="true" class="material-symbols-outlined text-[16px] text-primary">
+       ads_click
+      </span>
+      Chuyển đổi &amp; Khách hàng tiềm năng
+     </a>
+     <a class="flex items-center gap-2 px-3 py-2 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-body-sm text-body-sm" data-path="tang-truong-va-phan-tich" href="/report/seo?view=tang-truong-va-phan-tich">
+      <span aria-hidden="true" class="material-symbols-outlined text-[16px] text-primary">
+       lightbulb
+      </span>
+      Tăng trưởng &amp; Phân tích
+     </a>
+    </div>
+   </div>
+   <a class="flex items-center justify-between px-space-md py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all" data-path="facebook-content" href="/report/social">
+    <div class="flex items-center gap-space-sm">
+     <span aria-hidden="true" class="material-symbols-outlined text-[18px] text-primary">
+      article
+     </span>
+     <span class="font-body-md text-body-md">
+      Facebook Content
+     </span>
+    </div>
+    <span aria-hidden="true" class="material-symbols-outlined text-[16px] text-outline">
+     chevron_right
+    </span>
+   </a>
+    {% if active_report == 'facebook-ads' or active_report == 'ads' %}
+    <div class="flex flex-col rounded-lg bg-surface-container-low border border-outline-variant/40 overflow-hidden">
+     <a class="flex items-center justify-between px-space-md py-2.5 bg-surface-container-high text-primary font-semibold border-r-4 border-primary transition-all" data-path="facebook-ads" href="/report/facebook-ads">
+      <div class="flex items-center gap-space-sm">
+       <span aria-hidden="true" class="material-symbols-outlined text-[18px] text-primary">
+        campaign
+       </span>
+       <span class="font-body-md text-body-md">
+        Facebook Ads
+       </span>
+      </div>
+      <span aria-hidden="true" class="material-symbols-outlined text-[16px] text-primary">
+       expand_more
+      </span>
+     </a>
+     <div class="flex flex-col py-1 px-2 gap-0.5 bg-surface-container-lowest/50">
+      <a class="flex items-center gap-2 px-3 py-2 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-body-sm text-body-sm" data-path="fb-tong-quan-hieu-qua" href="/report/facebook-ads?view=fb-tong-quan-hieu-qua">
+       <span aria-hidden="true" class="material-symbols-outlined text-[16px] text-primary">bar_chart</span>
+       Tổng quan hiệu quả
+      </a>
+      <a class="flex items-center gap-2 px-3 py-2 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-body-sm text-body-sm" data-path="fb-hieu-qua-chien-dich" href="/report/facebook-ads?view=fb-hieu-qua-chien-dich">
+       <span aria-hidden="true" class="material-symbols-outlined text-[16px] text-primary">campaign</span>
+       Hiệu quả chiến dịch
+      </a>
+      <a class="flex items-center gap-2 px-3 py-2 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-body-sm text-body-sm" data-path="fb-doi-tuong-va-phan-phoi" href="/report/facebook-ads?view=fb-doi-tuong-va-phan-phoi">
+       <span aria-hidden="true" class="material-symbols-outlined text-[16px] text-primary">group</span>
+       Đối tượng &amp; Phân phối
+      </a>
+      <a class="flex items-center gap-2 px-3 py-2 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-body-sm text-body-sm" data-path="fb-hieu-qua-noi-dung-quang-cao" href="/report/facebook-ads?view=fb-hieu-qua-noi-dung-quang-cao">
+       <span aria-hidden="true" class="material-symbols-outlined text-[16px] text-primary">palette</span>
+       Hiệu quả nội dung quảng cáo
+      </a>
+      <a class="flex items-center gap-2 px-3 py-2 rounded-lg bg-surface-container-high text-primary font-semibold transition-colors font-body-sm text-body-sm" data-path="chuyen-doi-va-chi-phi" href="/report/facebook-ads">
+       <span aria-hidden="true" class="material-symbols-outlined text-[16px] text-primary">ads_click</span>
+       Chuyển đổi &amp; Chi phí
+      </a>
+      <a class="flex items-center gap-2 px-3 py-2 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-body-sm text-body-sm" data-path="fb-tang-truong-va-phan-tich" href="/report/facebook-ads?view=fb-tang-truong-va-phan-tich">
+       <span aria-hidden="true" class="material-symbols-outlined text-[16px] text-primary">lightbulb</span>
+       Tăng trưởng &amp; Phân tích
+      </a>
+     </div>
+    </div>
+    {% else %}
+    <a class="flex items-center justify-between px-space-md py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all" data-path="facebook-ads" href="/report/facebook-ads">
+     <div class="flex items-center gap-space-sm">
+      <span aria-hidden="true" class="material-symbols-outlined text-[18px] text-primary">
+       campaign
+      </span>
+      <span class="font-body-md text-body-md">
+       Facebook Ads
+      </span>
+     </div>
+     <span aria-hidden="true" class="material-symbols-outlined text-[16px] text-outline">
+      chevron_right
+     </span>
+    </a>
+    {% endif %}
+   <a class="flex items-center justify-between px-space-md py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all" data-path="tiktok-ads" href="/report/tiktok">
+    <div class="flex items-center gap-space-sm">
+     <span aria-hidden="true" class="material-symbols-outlined text-[18px] text-primary">
+      music_video
+     </span>
+     <span class="font-body-md text-body-md">
+      TikTok Ads
+     </span>
+    </div>
+    <span aria-hidden="true" class="material-symbols-outlined text-[16px] text-outline">
+     chevron_right
+    </span>
+   </a>
+   <a class="flex items-center justify-between px-space-md py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all" data-path="youtube" href="/report/youtube">
+    <div class="flex items-center gap-space-sm">
+     <span aria-hidden="true" class="material-symbols-outlined text-[18px] text-primary">
+      play_circle
+     </span>
+     <span class="font-body-md text-body-md">
+      YouTube
+     </span>
+    </div>
+    <span aria-hidden="true" class="material-symbols-outlined text-[16px] text-outline">
+     chevron_right
+    </span>
+   </a>
+   <a class="flex items-center justify-between px-space-md py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all" data-path="google-maps-va-ho-so-doanh-nghiep" href="/report/google-maps">
+    <div class="flex items-center gap-space-sm">
+     <span aria-hidden="true" class="material-symbols-outlined text-[18px] text-primary">
+      storefront
+     </span>
+     <span class="font-body-md text-body-md">
+      Google Maps &amp; Hồ sơ doanh nghiệp
+     </span>
+    </div>
+    <span aria-hidden="true" class="material-symbols-outlined text-[16px] text-outline">
+     chevron_right
+    </span>
+   </a>
+  </nav>
+ </div>
+ <div class="p-space-md border-t border-outline-variant/30 flex items-center justify-between bg-surface-container-low/50">
+  <div class="flex items-center gap-2">
+   <span aria-hidden="true" class="material-symbols-outlined text-outline text-[18px]">
+    verified
+   </span>
+   <span class="font-label-sm text-label-sm text-outline">
+    Bản quyền KDH Analytics
+   </span>
+  </div>
+ </div>
+</aside>
+
+<button type="button" id="sidebar-backdrop" aria-label="Đóng menu" hidden></button>
+<div class="dashboard-shell">
+<header class="fixed top-0 left-[280px] right-0 h-32 bg-surface-container-lowest/95 backdrop-blur-md border-b border-outline-variant/40 z-40 flex flex-col justify-between shadow-[0_1px_8px_rgba(0,0,0,0.03)] dashboard-header">
+ <div class="h-16 px-space-lg flex items-center justify-between border-b border-outline-variant/30 header-top">
+  <button aria-controls="dashboard-sidebar" aria-expanded="false" aria-label="Mở menu báo cáo" class="sidebar-toggle" id="sidebar-toggle" type="button">
+   <span aria-hidden="true" class="material-symbols-outlined">
+    menu
+   </span>
+  </button>
+  <div class="flex items-center gap-space-md">
+   <img alt="KDH Traffic Report Logo" class="h-8 w-auto object-contain lg:hidden" height="32" src="/static/img/kdh-logo.png" width="32"/>
+   <button aria-label="Thông tin nguồn dữ liệu" class="flex items-center gap-2 px-space-sm py-1.5 rounded-lg bg-surface-container-low border border-outline-variant/50 text-on-surface hover:bg-surface-container-high transition-colors font-body-sm text-body-sm" id="data-source" type="button">
+    <span aria-hidden="true" class="material-symbols-outlined text-[16px] text-primary">
+     sync_alt
+    </span>
+    <span>
+     Nguồn dữ liệu:
+     <strong>
+      Tổng hợp dữ liệu Marketing
+     </strong>
+    </span>
+    <span aria-hidden="true" class="material-symbols-outlined text-[16px] text-outline">
+     expand_more
+    </span>
+   </button>
+  </div>
+  <div class="flex items-center gap-space-md">
+   <div class="hidden md:flex items-center gap-2 px-2.5 py-1 rounded-full bg-surface-container-low border border-outline-variant/40 data-status">
+    <span class="inline-block w-2 h-2 rounded-full bg-[#15803d]">
+    </span>
+    <span class="font-label-sm text-label-sm text-on-surface-variant font-medium">
+     Đang xem dữ liệu mẫu
+    </span>
+   </div>
+   <div class="hidden xl:flex items-center gap-1 font-body-sm text-body-sm text-outline last-updated">
+    <span aria-hidden="true" class="material-symbols-outlined text-[16px]">
+     schedule
+    </span>
+    <span>
+     Cập nhật lần cuối: 02/10/2026 15:30
+    </span>
+   </div>
+   <button aria-controls="export-menu" aria-expanded="false" aria-haspopup="true" class="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-primary hover:bg-primary-container text-on-primary font-body-sm text-body-sm font-medium transition-colors shadow-[0_4px_14px_rgba(0,81,170,0.25)]" id="export-report" type="button">
+    <span aria-hidden="true" class="material-symbols-outlined text-[16px]">
+     download
+    </span>
+    <span>
+     Xuất báo cáo PDF/Excel
+    </span>
+   </button>
+   <div class="flex items-center gap-2 pl-space-xs">
+    <div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center">
+     <span aria-hidden="true" class="material-symbols-outlined text-on-primary text-[18px]">
+      person
+     </span>
+    </div>
+    <div class="hidden lg:flex flex-col text-left">
+     <span class="font-label-md text-label-md text-on-surface leading-tight">
+      Account Manager
+     </span>
+     <span class="font-label-sm text-label-sm text-outline leading-tight">
+      KDH Agency
+     </span>
+    </div>
+   </div>
+  </div>
+ </div>
+ <div class="h-16 px-space-lg flex items-center justify-between gap-space-md overflow-x-auto header-filters">
+  <div class="flex items-center gap-space-md shrink-0">
+   <span class="font-label-sm text-label-sm text-on-surface-variant font-medium uppercase tracking-wide">
+    Khoảng thời gian:
+   </span>
+   <div aria-label="Khoảng thời gian báo cáo" class="flex items-center bg-surface-container-low p-1 rounded-lg border border-outline-variant/40 text-on-surface-variant font-body-sm text-body-sm" id="period-switcher">
+    <button aria-pressed="false" class="px-3 py-1 rounded hover:text-on-surface transition-colors" data-period="7" type="button">
+     7 ngày
+    </button>
+    <button aria-pressed="true" class="px-3 py-1 rounded bg-surface-container-lowest text-primary font-semibold shadow-sm" data-period="30" type="button">
+     30 ngày
+    </button>
+    <button aria-pressed="false" class="px-3 py-1 rounded hover:text-on-surface transition-colors" data-period="90" type="button">
+     3 tháng
+    </button>
+    <button aria-pressed="false" class="px-3 py-1 rounded hover:text-on-surface transition-colors" data-period="180" type="button">
+     6 tháng
+    </button>
+    <button aria-pressed="false" class="px-3 py-1 rounded hover:text-on-surface transition-colors" data-period="custom" type="button">
+     Tùy chỉnh
+    </button>
+   </div>
+   <button class="flex items-center gap-1.5 px-3 py-1.5 bg-surface-container-lowest border border-outline-variant/60 rounded-lg font-body-sm text-body-sm text-on-surface" id="date-range" type="button">
+    <span aria-hidden="true" class="material-symbols-outlined text-[16px] text-primary">
+     calendar_today
+    </span>
+    <span class="font-medium" id="date-range-label">
+     01/09/2026 – 30/09/2026
+    </span>
+   </button>
+  </div>
+  <div class="flex items-center gap-2 shrink-0">
+   <span class="font-label-sm text-label-sm text-on-surface-variant font-medium uppercase tracking-wide">
+    So sánh:
+   </span>
+   <button aria-pressed="true" class="flex items-center gap-1.5 px-3 py-1.5 bg-surface-container-lowest border border-outline-variant/60 rounded-lg font-body-sm text-body-sm text-on-surface hover:bg-surface-container-low transition-colors" id="comparison" type="button">
+    <span class="font-medium">
+     Kỳ trước
+    </span>
+    <span class="text-outline" id="comparison-label">
+     (02/08/2026 – 31/08/2026)
+    </span>
+    <span aria-hidden="true" class="material-symbols-outlined text-[16px] text-outline">
+     arrow_drop_down
+    </span>
+   </button>
+  </div>
+ </div>
+</header>
+<main id="main-content" class="dashboard-main">{% block content %}{% endblock %}</main>
+</div>
+{% include "overview_controls.html" %}
+{% block scripts %}{% endblock %}
+</body>
+</html>

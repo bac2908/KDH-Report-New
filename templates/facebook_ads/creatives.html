@@ -1,0 +1,8 @@
+{% for row in ads.creatives %}
+<article class="fb-creative" data-creative-type="{{ row.type }}">
+  <div class="fb-creative-heading"><span class="fb-tag">{{ row.type_label }}</span><span class="fb-small fb-muted">{{ row.id }}</span></div>
+  <button type="button" class="fb-creative-preview" data-creative-detail="{{ row.id }}" aria-label="Xem {{ row.name }}"><img src="{{ row.image }}" alt="{{ row.name }}" loading="lazy"><span>{{ row.name }}</span></button>
+  <dl><div><dt>Chi tiêu</dt><dd>{{ row.display.spend }}</dd></div><div><dt>Leads thu về</dt><dd>{{ row.display.leads }}</dd></div><div><dt>CTR liên kết</dt><dd>{{ row.display.ctr }}</dd></div><div><dt>CPL</dt><dd>{{ row.display.cpl }}</dd></div></dl>
+  <button type="button" class="fb-text-button" data-creative-detail="{{ row.id }}">Xem chi tiết mẫu quảng cáo →</button>
+</article>
+{% else %}<p class="fb-empty">Không có mẫu quảng cáo phù hợp bộ lọc chiến dịch.</p>{% endfor %}

@@ -1,0 +1,10 @@
+{% for metric in ads.metrics %}
+<article class="fb-kpi panel">
+  <div class="fb-kpi-label"><span>{{ metric.label }}</span><span class="material-symbols-outlined" aria-hidden="true">{{ metric.icon }}</span></div>
+  <div class="fb-kpi-value {% if metric.key == 'spend' %}fb-money{% endif %}" data-metric="{{ metric.key }}">{{ metric.text }}</div>
+  <div class="fb-kpi-footer">
+    <span class="fb-delta {{ 'positive' if metric.favorable else 'negative' }}" data-fb-comparison>{{ metric.arrow if metric.delta is not none else '' }} {{ metric.delta_text }}</span>
+    <span>{{ metric.note }}</span>
+  </div>
+</article>
+{% endfor %}

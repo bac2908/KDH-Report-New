@@ -1,0 +1,8 @@
+{
+  "name": "kdh-report-styles",
+  "private": true,
+  "scripts": {
+    "build:css": "tailwindcss -c tailwind.config.cjs -i static/css/dashboard.source.css -o static/css/dashboard.css --minify"
+  },
+  "devDependencies": { "tailwindcss": "3.4.17" }
+}
