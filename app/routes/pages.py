@@ -10,7 +10,7 @@ templates = Jinja2Templates(directory=str(Path(__file__).resolve().parents[2] / 
 @router.get("/overview")
 async def overview_page(request: Request):
     return templates.TemplateResponse(
-        "overview.html",
+        "pages/overview/index.html",
         {"request": request, "title": "Tổng quan toàn bộ dự án", "overview": ReportService().get_overview()},
     )
 
@@ -18,7 +18,7 @@ async def overview_page(request: Request):
 @router.get("/report/seo")
 async def seo_page(request: Request):
     return templates.TemplateResponse(
-        request=request, name="seo.html",
+        request=request, name="pages/seo/index.html",
         context={"title": "SEO & Lưu lượng Website", "seo": ReportService().get_seo(), "active_report": "seo"},
     )
 
@@ -28,7 +28,7 @@ async def seo_page(request: Request):
 @router.get("/facebook-ads")
 async def facebook_ads_page(request: Request):
     return templates.TemplateResponse(
-        request=request, name="facebook_ads.html",
+        request=request, name="pages/facebook_ads/index.html",
         context={"title": "Facebook Ads & Chi phí - Hiệu quả chiến dịch & Tối ưu CPL", "active_report": "facebook-ads", "ads": ReportService().get_facebook_ads()},
     )
 
@@ -37,6 +37,6 @@ async def facebook_ads_page(request: Request):
 @router.get("/report/{report_name}")
 async def report_page(request: Request, report_name: str):
     return templates.TemplateResponse(
-        "report.html",
+        "pages/report/index.html",
         {"request": request, "title": report_name.replace("-", " ").title(), "report_name": report_name},
     )

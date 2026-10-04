@@ -213,6 +213,6 @@ module.exports = {
   },
   "content": [
     "./templates/**/*.html",
-    "./static/js/*.js"
+    "./static/js/**/*.js"
   ]
 };

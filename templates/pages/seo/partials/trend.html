@@ -1,0 +1,122 @@
+<div class="bg-surface-container-lowest rounded-xl p-space-lg border border-outline-variant/40 shadow-[0_4px_20px_-2px_rgba(15,23,42,0.05)] mb-space-xl" id="seo-trend">
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-space-md mb-6">
+<div>
+<h3 class="font-headline-md text-headline-md text-on-surface">
+     Xu Hướng Lưu Lượng Tìm Kiếm Tự Nhiên (Organic Traffic)
+    </h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant" id="seo-chart-description">
+     So sánh Lượt Click &amp; Lượt Hiển Thị trong 30 ngày qua so với kỳ trước (GSC Data)
+    </p>
+</div>
+<div class="flex items-center gap-3">
+<div class="flex items-center gap-2 font-body-sm text-body-sm text-on-surface-variant" id="seo-chart-legend">
+<span class="seo-legend-dot primary">
+</span>
+<span id="seo-primary-legend">
+      Lượt Click (Kỳ này)
+     </span>
+<span class="seo-legend-dot secondary">
+</span>
+<span id="seo-secondary-legend">
+      Lượt Hiển Thị (Kỳ này)
+     </span>
+</div>
+<div class="flex bg-surface-container-low p-1 rounded-lg border border-outline-variant/40" id="seo-chart-switcher">
+<button aria-pressed="true" class="px-3 py-1 rounded bg-surface-container-lowest text-primary font-semibold text-body-sm shadow-sm" data-chart-mode="traffic" id="seo-mode-traffic" type="button">
+      Clicks &amp; Impressions
+     </button>
+<button aria-pressed="false" class="px-3 py-1 rounded text-on-surface-variant hover:text-on-surface text-body-sm" data-chart-mode="rates" id="seo-mode-rates" type="button">
+      CTR &amp; Vị trí TB
+     </button>
+</div>
+</div>
+</div>
+<!-- Inline SVG Trend Chart -->
+<div aria-label="Xu hướng lưu lượng tìm kiếm tự nhiên" class="w-full h-80 relative flex items-end" id="seo-chart" role="group" tabindex="0">
+<svg class="w-full h-full overflow-visible" preserveaspectratio="none" viewbox="0 0 1000 300">
+<!-- Background grid lines -->
+<line stroke="#c2c6d5" stroke-dasharray="4" stroke-opacity="0.3" x1="0" x2="1000" y1="0" y2="0">
+</line>
+<line stroke="#c2c6d5" stroke-dasharray="4" stroke-opacity="0.3" x1="0" x2="1000" y1="75" y2="75">
+</line>
+<line stroke="#c2c6d5" stroke-dasharray="4" stroke-opacity="0.3" x1="0" x2="1000" y1="150" y2="150">
+</line>
+<line stroke="#c2c6d5" stroke-dasharray="4" stroke-opacity="0.3" x1="0" x2="1000" y1="225" y2="225">
+</line>
+<line stroke="#c2c6d5" stroke-opacity="0.3" x1="0" x2="1000" y1="300" y2="300">
+</line>
+<!-- Impressions Area/Line (Secondary) -->
+<path d="M 0 120 Q 150 90, 300 110 T 600 60 T 900 40 L 1000 35" data-chart-line="secondary" fill="none" stroke="#9e7dff" stroke-linecap="round" stroke-width="3">
+</path>
+<!-- Clicks Line (Primary) -->
+<path d="M 0 220 Q 150 190, 300 200 T 600 130 T 900 90 L 1000 80" data-chart-line="primary" fill="none" stroke="#0051aa" stroke-linecap="round" stroke-width="3.5">
+</path>
+<!-- Previous period comparison (dashed) -->
+<path d="M 0 250 Q 150 230, 300 240 T 600 180 T 900 150 L 1000 140" data-chart-line="previous" fill="none" stroke="#727784" stroke-dasharray="5,5" stroke-linecap="round" stroke-width="2">
+</path>
+</svg>
+<div class="absolute inset-0 flex justify-between items-end pointer-events-none pb-2 text-[11px] text-outline px-2" id="seo-chart-dates">
+<span>
+     01/09
+    </span>
+<span>
+     05/09
+    </span>
+<span>
+     10/09
+    </span>
+<span>
+     15/09
+    </span>
+<span>
+     20/09
+    </span>
+<span>
+     25/09
+    </span>
+<span>
+     30/09
+    </span>
+</div>
+</div>
+<div class="grid grid-cols-2 sm:grid-cols-4 gap-4 mt-space-md pt-space-md border-t border-outline-variant/30">
+<div class="bg-surface-container-low p-3 rounded-lg">
+<span class="text-outline text-label-sm uppercase">
+     Trung bình Clicks/Ngày
+    </span>
+<div class="font-title-sm text-title-sm text-on-surface mt-1">
+     1.328 clicks
+    </div>
+</div>
+<div class="bg-surface-container-low p-3 rounded-lg">
+<span class="text-outline text-label-sm uppercase">
+     CTR Trung Bình
+    </span>
+<div class="font-title-sm text-title-sm text-on-surface mt-1">
+     9,47%
+     <span class="text-[#15803d] text-body-sm font-semibold">
+      (+1.2%)
+     </span>
+</div>
+</div>
+<div class="bg-surface-container-low p-3 rounded-lg">
+<span class="text-outline text-label-sm uppercase">
+     Vị Trí Trung Bình GSC
+    </span>
+<div class="font-title-sm text-title-sm text-on-surface mt-1">
+     Top 4.2
+     <span class="text-[#15803d] text-body-sm font-semibold">
+      (+0.8 bậc)
+     </span>
+</div>
+</div>
+<div class="bg-surface-container-low p-3 rounded-lg">
+<span class="text-outline text-label-sm uppercase">
+     Tổng Từ Khóa Index
+    </span>
+<div class="font-title-sm text-title-sm text-on-surface mt-1">
+     1.840 từ khóa
+    </div>
+</div>
+</div>
+</div>

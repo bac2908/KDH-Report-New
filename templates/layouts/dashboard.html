@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0051aa">
+  <title>{{ title }} | KDH Traffic Report</title>
+  <link rel="icon" href="/static/img/kdh-logo.png">
+  <link rel="stylesheet" href="/static/css/shared/fonts.css">
+  <link rel="stylesheet" href="/static/css/dist/dashboard.css">
+  <script src="/static/js/shared/sidebar.js" defer></script>
+  {% block page_styles %}{% endblock %}
+  {% block page_script %}{% endblock %}
+</head>
+<body class="bg-surface font-body-md text-body-md text-on-surface">
+<a class="skip-link" href="#main-content">Đến nội dung báo cáo</a>
+{% include "components/dashboard/sidebar.html" %}
+
+<button type="button" id="sidebar-backdrop" aria-label="Đóng menu" hidden></button>
+<div class="dashboard-shell">
+{% include "components/dashboard/header.html" %}
+<main id="main-content" class="dashboard-main">{% block content %}{% endblock %}</main>
+</div>
+{% include "components/dashboard/controls.html" %}
+{% block scripts %}{% endblock %}
+</body>
+</html>

@@ -1,0 +1,222 @@
+<section class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg mb-space-lg" id="analytics">
+<!-- Left Column (7 cols): Trend Dual-line Chart -->
+<div class="lg:col-span-7 flex flex-col bg-surface-container-lowest p-space-lg rounded-2xl shadow-sm" id="trend-panel">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-space-sm mb-space-md">
+<div>
+<h2 class="font-headline-md text-headline-md text-on-surface">
+      XU HƯỚNG HIỆU QUẢ MARKETING
+     </h2>
+<span class="font-body-sm text-body-sm text-on-surface-variant">
+      So sánh tiến độ hàng ngày giữa Kỳ báo cáo &amp; Kỳ trước
+     </span>
+</div>
+<!-- Metric toggle pills -->
+<div aria-label="Chỉ số biểu đồ" class="flex items-center bg-surface-container-low p-1 rounded-xl" id="metric-switcher">
+<button aria-pressed="true" class="px-2.5 py-1 rounded-lg bg-surface-container-lowest text-primary font-label-sm text-label-sm shadow-sm" data-metric="traffic" type="button">
+      Lưu lượng
+     </button>
+<button aria-pressed="false" class="px-2.5 py-1 rounded-lg text-outline hover:text-on-surface font-label-sm text-label-sm transition-colors" data-metric="reach" type="button">
+      Tiếp cận
+     </button>
+<button aria-pressed="false" class="px-2.5 py-1 rounded-lg text-outline hover:text-on-surface font-label-sm text-label-sm transition-colors" data-metric="leads" type="button">
+      Leads
+     </button>
+<button aria-pressed="false" class="px-2.5 py-1 rounded-lg text-outline hover:text-on-surface font-label-sm text-label-sm transition-colors" data-metric="spend" type="button">
+      Chi phí
+     </button>
+</div>
+</div>
+<!-- Chart Header Legend -->
+<div class="flex items-center gap-space-md mb-space-sm text-body-sm font-body-sm">
+<div class="flex items-center gap-2">
+<span class="w-3.5 h-1.5 rounded-full bg-primary inline-block">
+</span>
+<span class="text-on-surface font-medium" id="current-legend">
+      Tháng 9/2026 (Kỳ hiện tại)
+     </span>
+</div>
+<div class="flex items-center gap-2">
+<span class="w-3.5 h-1.5 rounded-full bg-outline-variant inline-block">
+</span>
+<span class="text-outline" id="previous-legend">
+      Tháng 8/2026 (Kỳ trước)
+     </span>
+</div>
+</div>
+<!-- Visual Dual-Line Chart Area (SVG) -->
+<div aria-label="Biểu đồ xu hướng lưu lượng so với kỳ trước" class="trend-chart" id="trend-chart" role="img">
+</div>
+<div class="mt-space-md p-space-sm bg-surface-container-low rounded-xl flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span aria-hidden="true" class="material-symbols-outlined text-primary text-[18px]">
+      insights
+     </span>
+<span class="font-body-sm text-body-sm text-on-surface">
+      Đỉnh lưu lượng tăng mạnh tuần 3 nhờ chiến dịch Tiêm phòng Cúm &amp; Phế cầu trước năm học.
+     </span>
+</div>
+<button class="font-label-sm text-label-sm text-primary font-semibold shrink-0 cursor-pointer hover:underline" id="peak-detail" type="button">
+     Chi tiết ngày đỉnh →
+    </button>
+</div>
+</div>
+<!-- Right Column (5 cols): Channel Lead & Traffic Contribution Breakdown -->
+<div class="lg:col-span-5 flex flex-col justify-between bg-surface-container-lowest p-space-lg rounded-2xl shadow-sm">
+<div>
+<div class="flex items-center justify-between mb-space-xs">
+<h2 class="font-headline-md text-headline-md text-on-surface">
+      TỶ TRỌNG ĐÓNG GÓP THEO KÊNH
+     </h2>
+<span class="font-label-sm text-label-sm text-primary font-semibold" data-field="contribution_total">
+      {{ overview.fields['contribution_total'] }}
+     </span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-space-md">
+     Phân bổ nguồn khách hàng tiềm năng đến từ từng điểm chạm marketing
+    </p>
+<!-- Channel Progress Rows -->
+<div class="flex flex-col gap-space-sm">
+<!-- Row 1: SEO -->
+<div class="flex flex-col gap-1">
+<div class="flex justify-between text-body-sm font-body-sm">
+<span class="font-medium text-on-surface flex items-center gap-1.5">
+<span class="w-2.5 h-2.5 rounded-full bg-primary">
+</span>
+<span>
+         Organic Search (SEO Website)
+        </span>
+</span>
+<span class="font-semibold text-on-surface">
+        38%
+        <span class="text-outline font-normal" data-field="contribution_0">
+         {{ overview.fields['contribution_0'] }}
+        </span>
+</span>
+</div>
+<div class="w-full h-2 rounded-full bg-surface-container-low overflow-hidden">
+<div class="h-full bg-primary rounded-full" style="width: 38%;">
+</div>
+</div>
+</div>
+<!-- Row 2: Facebook Ads -->
+<div class="flex flex-col gap-1">
+<div class="flex justify-between text-body-sm font-body-sm">
+<span class="font-medium text-on-surface flex items-center gap-1.5">
+<span class="w-2.5 h-2.5 rounded-full bg-secondary">
+</span>
+<span>
+         Facebook Ads (Quảng cáo trả phí)
+        </span>
+</span>
+<span class="font-semibold text-on-surface">
+        26%
+        <span class="text-outline font-normal" data-field="contribution_1">
+         {{ overview.fields['contribution_1'] }}
+        </span>
+</span>
+</div>
+<div class="w-full h-2 rounded-full bg-surface-container-low overflow-hidden">
+<div class="h-full bg-secondary rounded-full" style="width: 26%;">
+</div>
+</div>
+</div>
+<!-- Row 3: TikTok Ads -->
+<div class="flex flex-col gap-1">
+<div class="flex justify-between text-body-sm font-body-sm">
+<span class="font-medium text-on-surface flex items-center gap-1.5">
+<span class="w-2.5 h-2.5 rounded-full bg-on-surface">
+</span>
+<span>
+         TikTok Ads (Video Viral)
+        </span>
+</span>
+<span class="font-semibold text-on-surface">
+        15%
+        <span class="text-outline font-normal" data-field="contribution_2">
+         {{ overview.fields['contribution_2'] }}
+        </span>
+</span>
+</div>
+<div class="w-full h-2 rounded-full bg-surface-container-low overflow-hidden">
+<div class="h-full bg-on-surface rounded-full" style="width: 15%;">
+</div>
+</div>
+</div>
+<!-- Row 4: Facebook Content -->
+<div class="flex flex-col gap-1">
+<div class="flex justify-between text-body-sm font-body-sm">
+<span class="font-medium text-on-surface flex items-center gap-1.5">
+<span class="w-2.5 h-2.5 rounded-full bg-primary-container">
+</span>
+<span>
+         Facebook Content (Fanpage tự nhiên)
+        </span>
+</span>
+<span class="font-semibold text-on-surface">
+        9%
+        <span class="text-outline font-normal" data-field="contribution_3">
+         {{ overview.fields['contribution_3'] }}
+        </span>
+</span>
+</div>
+<div class="w-full h-2 rounded-full bg-surface-container-low overflow-hidden">
+<div class="h-full bg-primary-container rounded-full" style="width: 9%;">
+</div>
+</div>
+</div>
+<!-- Row 5: Google Maps -->
+<div class="flex flex-col gap-1">
+<div class="flex justify-between text-body-sm font-body-sm">
+<span class="font-medium text-on-surface flex items-center gap-1.5">
+<span class="w-2.5 h-2.5 rounded-full bg-[#15803d]">
+</span>
+<span>
+         Google Maps (Khách phòng khám địa phương)
+        </span>
+</span>
+<span class="font-semibold text-on-surface">
+        7%
+        <span class="text-outline font-normal" data-field="contribution_4">
+         {{ overview.fields['contribution_4'] }}
+        </span>
+</span>
+</div>
+<div class="w-full h-2 rounded-full bg-surface-container-low overflow-hidden">
+<div class="h-full bg-[#15803d] rounded-full" style="width: 7%;">
+</div>
+</div>
+</div>
+<!-- Row 6: YouTube -->
+<div class="flex flex-col gap-1">
+<div class="flex justify-between text-body-sm font-body-sm">
+<span class="font-medium text-on-surface flex items-center gap-1.5">
+<span class="w-2.5 h-2.5 rounded-full bg-tertiary">
+</span>
+<span>
+         YouTube (Tư vấn chuyên sâu Bác sĩ)
+        </span>
+</span>
+<span class="font-semibold text-on-surface">
+        5%
+        <span class="text-outline font-normal" data-field="contribution_5">
+         {{ overview.fields['contribution_5'] }}
+        </span>
+</span>
+</div>
+<div class="w-full h-2 rounded-full bg-surface-container-low overflow-hidden">
+<div class="h-full bg-tertiary rounded-full" style="width: 5%;">
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="mt-space-md p-space-sm rounded-xl bg-surface-container-low/70 flex items-center justify-between">
+<span class="font-body-sm text-body-sm text-outline">
+     Kênh dẫn đầu hiệu quả chi phí:
+    </span>
+<span class="font-label-md text-label-md text-primary font-semibold">
+     SEO &amp; Google Maps (Organic ROI cao nhất)
+    </span>
+</div>
+</div>
+</section>

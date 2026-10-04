@@ -1,0 +1,147 @@
+<section class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-space-md mb-space-lg overview-kpis" id="kpi-grid">
+<!-- Card 1 -->
+<div class="flex flex-col justify-between bg-surface-container-lowest p-space-md rounded-2xl shadow-sm hover:shadow-md transition-shadow kpi-card">
+<div class="flex items-start justify-between">
+<span class="font-label-md text-label-md text-outline uppercase tracking-wider">
+     Tổng lượt tiếp cận
+    </span>
+<div class="p-2 rounded-lg bg-surface-container-low text-primary">
+<span aria-hidden="true" class="material-symbols-outlined text-[20px]">
+      hub
+     </span>
+</div>
+</div>
+<div class="my-space-sm">
+<span class="font-kpi-display text-kpi-display text-on-surface tracking-tight" data-field="reach">
+     {{ overview.fields['reach'] }}
+    </span>
+</div>
+<div class="flex items-center justify-between pt-space-xs">
+<span class="font-metric-delta text-metric-delta text-[#15803d] bg-[#dcfce7] px-2 py-0.5 rounded-full flex items-center gap-0.5">
+<span aria-hidden="true" class="material-symbols-outlined text-[14px]">
+      arrow_upward
+     </span>
+     15,8%
+    </span>
+<span class="font-body-sm text-body-sm text-outline" data-field="reach_previous">
+     {{ overview.fields['reach_previous'] }}
+    </span>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="flex flex-col justify-between bg-surface-container-lowest p-space-md rounded-2xl shadow-sm hover:shadow-md transition-shadow kpi-card">
+<div class="flex items-start justify-between">
+<span class="font-label-md text-label-md text-outline uppercase tracking-wider">
+     Lượt truy cập Website
+    </span>
+<div class="p-2 rounded-lg bg-surface-container-low text-primary">
+<span aria-hidden="true" class="material-symbols-outlined text-[20px]">
+      language
+     </span>
+</div>
+</div>
+<div class="my-space-sm">
+<span class="font-kpi-display text-kpi-display text-on-surface tracking-tight" data-field="traffic">
+     {{ overview.fields['traffic'] }}
+    </span>
+</div>
+<div class="flex items-center justify-between pt-space-xs">
+<span class="font-metric-delta text-metric-delta text-[#15803d] bg-[#dcfce7] px-2 py-0.5 rounded-full flex items-center gap-0.5">
+<span aria-hidden="true" class="material-symbols-outlined text-[14px]">
+      arrow_upward
+     </span>
+     22,4%
+    </span>
+<span class="font-body-sm text-body-sm text-outline" data-field="traffic_previous">
+     {{ overview.fields['traffic_previous'] }}
+    </span>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="flex flex-col justify-between bg-surface-container-lowest p-space-md rounded-2xl shadow-sm hover:shadow-md transition-shadow kpi-card">
+<div class="flex items-start justify-between">
+<span class="font-label-md text-label-md text-outline uppercase tracking-wider">
+     Tổng lượt tương tác
+    </span>
+<div class="p-2 rounded-lg bg-surface-container-low text-secondary">
+<span aria-hidden="true" class="material-symbols-outlined text-[20px]">
+      thumb_up
+     </span>
+</div>
+</div>
+<div class="my-space-sm">
+<span class="font-kpi-display text-kpi-display text-on-surface tracking-tight" data-field="engagement">
+     {{ overview.fields['engagement'] }}
+    </span>
+</div>
+<div class="flex items-center justify-between pt-space-xs">
+<span class="font-metric-delta text-metric-delta text-[#15803d] bg-[#dcfce7] px-2 py-0.5 rounded-full flex items-center gap-0.5">
+<span aria-hidden="true" class="material-symbols-outlined text-[14px]">
+      arrow_upward
+     </span>
+     9,1%
+    </span>
+<span class="font-body-sm text-body-sm text-outline" data-field="engagement_previous">
+     {{ overview.fields['engagement_previous'] }}
+    </span>
+</div>
+</div>
+<!-- Card 4 -->
+<div class="flex flex-col justify-between bg-surface-container-lowest p-space-md rounded-2xl shadow-sm hover:shadow-md transition-shadow kpi-card">
+<div class="flex items-start justify-between">
+<span class="font-label-md text-label-md text-outline uppercase tracking-wider">
+     Khách hàng tiềm năng
+    </span>
+<div class="p-2 rounded-lg bg-surface-container-low text-tertiary">
+<span aria-hidden="true" class="material-symbols-outlined text-[20px]">
+      contact_phone
+     </span>
+</div>
+</div>
+<div class="my-space-sm">
+<span class="font-kpi-display text-kpi-display text-on-surface tracking-tight" data-field="leads">
+     {{ overview.fields['leads'] }}
+    </span>
+</div>
+<div class="flex items-center justify-between pt-space-xs">
+<span class="font-metric-delta text-metric-delta text-[#15803d] bg-[#dcfce7] px-2 py-0.5 rounded-full flex items-center gap-0.5">
+<span aria-hidden="true" class="material-symbols-outlined text-[14px]">
+      arrow_upward
+     </span>
+     18,4%
+    </span>
+<span class="font-body-sm text-body-sm text-outline">
+     Leads chất lượng cao
+    </span>
+</div>
+</div>
+<!-- Card 5 -->
+<div class="flex flex-col justify-between bg-surface-container-lowest p-space-md rounded-2xl shadow-sm hover:shadow-md transition-shadow kpi-card">
+<div class="flex items-start justify-between">
+<span class="font-label-md text-label-md text-outline uppercase tracking-wider">
+     Tổng chi phí quảng cáo
+    </span>
+<div class="p-2 rounded-lg bg-surface-container-low text-primary">
+<span aria-hidden="true" class="material-symbols-outlined text-[20px]">
+      payments
+     </span>
+</div>
+</div>
+<div class="my-space-sm">
+<span class="font-kpi-display text-kpi-display text-on-surface tracking-tight" data-field="spend">
+     {{ overview.fields['spend'] }}
+    </span>
+</div>
+<div class="flex items-center justify-between pt-space-xs">
+<span class="font-metric-delta text-metric-delta text-[#15803d] bg-[#dcfce7] px-2 py-0.5 rounded-full flex items-center gap-0.5">
+<span aria-hidden="true" class="material-symbols-outlined text-[14px]">
+      arrow_downward
+     </span>
+     4,2%
+    </span>
+<span class="font-body-sm text-body-sm text-outline">
+     Tối ưu CPA giảm
+    </span>
+</div>
+</div>
+</section>

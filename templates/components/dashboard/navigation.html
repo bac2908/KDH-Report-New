@@ -1,0 +1,47 @@
+{% set current = active_report | default(report_name | default('overview')) %}
+{% macro report_group(key, label, icon, url, path, items) %}
+<div class="report-nav-group" data-report-group="{{ key }}">
+  <div class="report-nav-row">
+    <a class="report-nav-link" data-path="{{ path }}" href="{{ url }}" {% if current == key %}aria-current="page"{% endif %}>
+      <span class="material-symbols-outlined" aria-hidden="true">{{ icon }}</span><span>{{ label }}</span>
+    </a>
+    <button class="report-nav-toggle" type="button" aria-label="Menu con {{ label }}" aria-controls="{{ key }}-submenu" aria-expanded="{{ 'true' if current == key else 'false' }}">
+      <span class="material-symbols-outlined" aria-hidden="true">expand_more</span>
+    </button>
+  </div>
+  <div id="{{ key }}-submenu" class="report-submenu {{ 'seo-submenu' if key == 'seo' else '' }}" {% if current != key %}hidden{% endif %}>
+    {% for view, text, symbol, section in items %}
+    <a href="{{ url }}?view={{ view }}" data-path="{{ view }}" data-section="{{ section }}">
+      <span class="material-symbols-outlined" aria-hidden="true">{{ symbol }}</span><span>{{ text }}</span>
+    </a>
+    {% endfor %}
+  </div>
+</div>
+{% endmacro %}
+<nav aria-label="Báo cáo theo kênh" class="report-navigation">
+  {{ report_group('seo', 'SEO & Lưu lượng Website', 'search_insights', '/report/seo', 'seo-va-luu-luong-website', [
+    ('tong-quan-hieu-qua', 'Tổng quan hiệu quả', 'bar_chart', 'seo-summary'),
+    ('hieu-qua-seo', 'Hiệu quả SEO', 'trending_up', 'seo-kpis'),
+    ('thu-hang-tu-khoa', 'Thứ hạng từ khóa', 'key', 'seo-keywords'),
+    ('hieu-qua-trang-dich', 'Hiệu quả trang đích', 'description', 'seo-landings'),
+    ('phan-tich-luu-luong-truy-cap', 'Phân tích lưu lượng truy cập', 'group', 'seo-trend'),
+    ('chuyen-doi-va-khach-hang-tiem-nang', 'Chuyển đổi & Khách hàng tiềm năng', 'ads_click', 'seo-funnel'),
+    ('tang-truong-va-phan-tich', 'Tăng trưởng & Phân tích', 'lightbulb', 'seo-insights')
+  ]) }}
+  <a class="report-nav-link" data-path="facebook-content" href="/report/social" {% if current == 'social' %}aria-current="page"{% endif %}><span class="material-symbols-outlined" aria-hidden="true">article</span><span>Facebook Content</span></a>
+  {{ report_group('facebook-ads', 'Facebook Ads', 'campaign', '/report/facebook-ads', 'facebook-ads', [
+    ('fb-tong-quan-hieu-qua', 'Tổng quan hiệu quả', 'bar_chart', 'fb-summary'),
+    ('fb-hieu-qua-chien-dich', 'Hiệu quả chiến dịch', 'campaign', 'fb-campaigns'),
+    ('fb-doi-tuong-va-phan-phoi', 'Đối tượng & Phân phối', 'group', 'fb-audience'),
+    ('fb-hieu-qua-noi-dung-quang-cao', 'Hiệu quả nội dung quảng cáo', 'palette', 'fb-creatives'),
+    ('chuyen-doi-va-chi-phi', 'Chuyển đổi & Chi phí', 'ads_click', 'fb-funnel'),
+    ('fb-tang-truong-va-phan-tich', 'Tăng trưởng & Phân tích', 'lightbulb', 'fb-insights')
+  ]) }}
+  {% for key, path, label, icon in [
+    ('tiktok', 'tiktok-ads', 'TikTok Ads', 'music_video'),
+    ('youtube', 'youtube', 'YouTube', 'play_circle'),
+    ('google-maps', 'google-maps-va-ho-so-doanh-nghiep', 'Google Maps & Hồ sơ doanh nghiệp', 'storefront')
+  ] %}
+  <a class="report-nav-link" data-path="{{ path }}" href="/report/{{ key }}" {% if current == key %}aria-current="page"{% endif %}><span class="material-symbols-outlined" aria-hidden="true">{{ icon }}</span><span>{{ label }}</span></a>
+  {% endfor %}
+</nav>

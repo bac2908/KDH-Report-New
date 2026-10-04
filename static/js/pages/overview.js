@@ -219,35 +219,7 @@
     } catch (error) { toast(error.message); }
   });
 
-  function sidebar(open) {
-    $('#dashboard-sidebar').classList.toggle('is-open', open);
-    $('#sidebar-backdrop').hidden = !open;
-    $('#sidebar-toggle').setAttribute('aria-expanded', String(open));
-    document.body.style.overflow = open ? 'hidden' : '';
-    $('#dashboard-sidebar').inert = !open && window.innerWidth < 1024;
-    if (open) $('#dashboard-sidebar a').focus();
-    else if (window.innerWidth < 1024) $('#sidebar-toggle').focus();
-  }
-  $('#sidebar-toggle').addEventListener('click', () => sidebar(!$('#dashboard-sidebar').classList.contains('is-open')));
-  $('#sidebar-backdrop').addEventListener('click', () => sidebar(false));
-  document.addEventListener('keydown', (event) => {
-    if (event.key === 'Escape') {
-      if (!$('#export-menu').hidden) { closeExport(); $('#export-report').focus(); }
-      if ($('#dashboard-sidebar').classList.contains('is-open')) sidebar(false);
-    }
-    if (event.key === 'Tab' && $('#dashboard-sidebar').classList.contains('is-open')) {
-      const focusable = $$('#dashboard-sidebar a').filter((el) => el.getClientRects().length);
-      const first = focusable[0], last = focusable[focusable.length - 1];
-      if (event.shiftKey && document.activeElement === first) { event.preventDefault(); last.focus(); }
-      else if (!event.shiftKey && document.activeElement === last) { event.preventDefault(); first.focus(); }
-    }
-  });
-  const mobile = window.matchMedia('(max-width: 1023px)');
-  mobile.addEventListener('change', () => {
-    $('#dashboard-sidebar').inert = mobile.matches;
-    if (!mobile.matches) sidebar(false);
-  });
-  $('#dashboard-sidebar').inert = mobile.matches;
+
   new ResizeObserver(renderChart).observe($('#trend-chart'));
   render();
   const query = new URLSearchParams(location.search);

@@ -58,7 +58,7 @@ def test_overview_renders_reference_dashboard():
     assert response.status_code == 200
     assert 'TỔNG QUAN TOÀN BỘ DỰ ÁN' in response.text
     assert '482.350' in response.text
-    assert '/static/css/dashboard.css' in response.text
+    assert '/static/css/dist/dashboard.css' in response.text
     assert 'cdn.tailwindcss.com' not in response.text
 
 

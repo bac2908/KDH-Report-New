@@ -22,6 +22,6 @@ FB_FRAGMENTS: tuple[str, ...] = (
 def facebook_ads_fragments(ads: Mapping[str, Any]) -> dict[str, str]:
     """Render each dynamic Facebook Ads section for the page and API response."""
     return {
-        name: _templates.get_template(f"facebook_ads/{name}.html").render(ads=ads)
+        name: _templates.get_template(f"pages/facebook_ads/partials/{name}.html").render(ads=ads)
         for name in FB_FRAGMENTS
     }

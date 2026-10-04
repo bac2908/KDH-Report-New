@@ -1,4 +1,5 @@
 from fastapi import FastAPI
+from fastapi.responses import RedirectResponse
 from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
 from pathlib import Path
@@ -22,7 +23,7 @@ app.include_router(reports_router)
 
 @app.get("/")
 def root_redirect():
-    return {"message": "Welcome to KDH Marketing Dashboard", "overview_url": "/overview"}
+    return RedirectResponse(url="/overview")
 
 if __name__ == "__main__":
     import uvicorn

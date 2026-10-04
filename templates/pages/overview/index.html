@@ -1,0 +1,15 @@
+{% extends "layouts/dashboard.html" %}
+{% block page_script %}<script src="/static/js/pages/overview.js" defer></script>{% endblock %}
+{% block content %}
+<div class="flex flex-col w-full">
+  {% include "pages/overview/partials/executive_summary.html" %}
+  {% include "pages/overview/partials/kpis.html" %}
+  {% include "pages/overview/partials/channels.html" %}
+  {% include "pages/overview/partials/analytics.html" %}
+  {% include "pages/overview/partials/insights.html" %}
+  {% include "pages/overview/partials/action_plan.html" %}
+  {% include "pages/overview/partials/footer.html" %}
+</div>
+{% include "pages/overview/controls.html" %}
+{% endblock %}
+{% block scripts %}<script id="overview-data" type="application/json">{{ overview | tojson }}</script>{% endblock %}

@@ -4,7 +4,7 @@
   <div class="fb-kpi-value {% if metric.key == 'spend' %}fb-money{% endif %}" data-metric="{{ metric.key }}">{{ metric.text }}</div>
   <div class="fb-kpi-footer">
     <span class="fb-delta {{ 'positive' if metric.favorable else 'negative' }}" data-fb-comparison>{{ metric.arrow if metric.delta is not none else '' }} {{ metric.delta_text }}</span>
-    <span>{{ metric.note }}</span>
+    <span {% if metric.note == 'so với kỳ trước' %}data-fb-comparison{% endif %}>{{ metric.note }}</span>
   </div>
 </article>
 {% endfor %}
