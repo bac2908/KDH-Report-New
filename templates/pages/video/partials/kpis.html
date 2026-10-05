@@ -1,0 +1,8 @@
+{% from 'pages/video/partials/helpers.html' import num, pct, compact, icon %}
+{% for metric in video.metrics %}
+<article class="vd-card vd-kpi"><div class="vd-kpi-label"><span>{{ metric.label }}</span>{{ icon(metric.icon) }}</div>
+  <div class="vd-kpi-value" data-metric="{{ metric.key }}">{% if video.channel == 'youtube' and metric.key == 'subscribers' %}+{% endif %}{% if metric.key == 'duration' %}{{ metric.value }}{% elif metric.key == 'ctr' %}{{ pct(metric.value) }}{% elif video.channel == 'tiktok' and metric.key == 'views' %}{{ compact(metric.value) }}{% else %}{{ num(metric.value) }}{% endif %}{% if metric.unit and metric.key != 'ctr' %}<span class="{{ 'vd-unit-large' if video.channel == 'tiktok' else 'vd-unit' }}"> {{ metric.unit }}</span>{% endif %}{% if metric.secondary %}<small> | {{ metric.secondary.replace('.', ',') }}</small>{% endif %}</div>
+  <div class="vd-delta" data-video-comparison><span>{{ '↓' if metric.key == 'cpa' else '↑' }} {{ metric.delta }}</span>{% if metric.key != 'cpa' %}<small>so với kỳ trước</small>{% endif %}</div>
+  {% if video.channel == 'youtube' %}<div class="vd-kpi-foot"><span>{{ metric.source }}</span><span>{{ metric.assessment }}</span></div>{% endif %}
+</article>
+{% endfor %}

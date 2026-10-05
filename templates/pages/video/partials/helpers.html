@@ -1,0 +1,4 @@
+{% macro num(value) -%}{{ '{:,.0f}'.format(value).replace(',', '.') }}{%- endmacro %}
+{% macro pct(value) -%}{{ ('%.2f'|format(value)).rstrip('0').rstrip('.').replace('.', ',') }}%{%- endmacro %}
+{% macro compact(value) -%}{{ '%.1f'|format(value / 1000) }}K{%- endmacro %}
+{% macro icon(name) -%}<span class="material-symbols-outlined" aria-hidden="true">{{ name }}</span>{%- endmacro %}

@@ -28,7 +28,15 @@
     ('chuyen-doi-va-khach-hang-tiem-nang', 'Chuyển đổi & Khách hàng tiềm năng', 'ads_click', 'seo-funnel'),
     ('tang-truong-va-phan-tich', 'Tăng trưởng & Phân tích', 'lightbulb', 'seo-insights')
   ]) }}
-  <a class="report-nav-link" data-path="facebook-content" href="/report/social" {% if current == 'social' %}aria-current="page"{% endif %}><span class="material-symbols-outlined" aria-hidden="true">article</span><span>Facebook Content</span></a>
+  {{ report_group('facebook-content', 'Facebook Content', 'article', '/report/social', 'facebook-content', [
+    ('fc-tong-quan-hieu-qua', 'Tổng quan hiệu quả', 'bar_chart', 'fc-summary'),
+    ('fc-dinh-dang-noi-dung', 'Phân bổ định dạng nội dung', 'donut_large', 'fc-formats'),
+    ('fc-chu-de-noi-dung', 'Hiệu quả theo chủ đề', 'category', 'fc-topics'),
+    ('fc-hieu-qua-bai-dang', 'Hiệu quả bài đăng', 'article', 'fc-posts'),
+    ('fc-cau-truc-tuong-tac', 'Cấu trúc tương tác', 'pie_chart', 'fc-engagement'),
+    ('fc-tiep-can-tu-nhien-tra-phi', 'Tiếp cận tự nhiên & trả phí', 'monitoring', 'fc-reach'),
+    ('fc-de-xuat-hanh-dong', 'Điểm nổi bật & Đề xuất', 'lightbulb', 'fc-insights')
+  ]) }}
   {{ report_group('facebook-ads', 'Facebook Ads', 'campaign', '/report/facebook-ads', 'facebook-ads', [
     ('fb-tong-quan-hieu-qua', 'Tổng quan hiệu quả', 'bar_chart', 'fb-summary'),
     ('fb-hieu-qua-chien-dich', 'Hiệu quả chiến dịch', 'campaign', 'fb-campaigns'),
@@ -37,9 +45,24 @@
     ('chuyen-doi-va-chi-phi', 'Chuyển đổi & Chi phí', 'ads_click', 'fb-funnel'),
     ('fb-tang-truong-va-phan-tich', 'Tăng trưởng & Phân tích', 'lightbulb', 'fb-insights')
   ]) }}
+  {{ report_group('tiktok', 'TikTok Ads', 'music_video', '/report/tiktok', 'tiktok-ads', [
+    ('tt-tong-quan', 'Tổng quan hiệu quả', 'bar_chart', 'tt-summary'),
+    ('tt-chuyen-doi', 'Phễu chuyển đổi', 'filter_alt', 'tt-funnel'),
+    ('tt-xu-huong', 'Chi tiêu & Leads', 'monitoring', 'tt-trend'),
+    ('tt-chien-dich', 'Hiệu quả chiến dịch', 'campaign', 'tt-campaigns'),
+    ('tt-video', 'Hiệu suất video', 'video_library', 'tt-videos'),
+    ('tt-de-xuat', 'Điểm nổi bật & Đề xuất', 'lightbulb', 'tt-insights')
+  ]) }}
+  {{ report_group('youtube', 'YouTube', 'play_circle', '/report/youtube', 'youtube', [
+    ('yt-tong-quan', 'Tổng quan hiệu quả', 'bar_chart', 'yt-summary'),
+    ('yt-xu-huong', 'Lượt xem & Thời gian xem', 'monitoring', 'yt-trend'),
+    ('yt-video', 'Hiệu quả video', 'video_library', 'yt-videos'),
+    ('yt-khan-gia', 'Khán giả & Giữ chân', 'group', 'yt-audience'),
+    ('yt-nguon', 'Nguồn tiếp cận & Từ khóa', 'search_insights', 'yt-sources'),
+    ('yt-chuyen-doi', 'Phễu chuyển đổi', 'filter_alt', 'yt-funnel'),
+    ('yt-de-xuat', 'Điểm nổi bật & Đề xuất', 'lightbulb', 'yt-insights')
+  ]) }}
   {% for key, path, label, icon in [
-    ('tiktok', 'tiktok-ads', 'TikTok Ads', 'music_video'),
-    ('youtube', 'youtube', 'YouTube', 'play_circle'),
     ('google-maps', 'google-maps-va-ho-so-doanh-nghiep', 'Google Maps & Hồ sơ doanh nghiệp', 'storefront')
   ] %}
   <a class="report-nav-link" data-path="{{ path }}" href="/report/{{ key }}" {% if current == key %}aria-current="page"{% endif %}><span class="material-symbols-outlined" aria-hidden="true">{{ icon }}</span><span>{{ label }}</span></a>

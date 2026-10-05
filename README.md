@@ -86,6 +86,14 @@ uses deterministic rules; Meta Marketing API, CRM and AI services are not connec
 
 ## Dashboard styling
 
+Facebook Content (`/report/facebook-content`, alias `/report/social`) follows the supplied
+HTML reference: six KPIs, format/topic distribution, post table, engagement/reach breakdown
+and executive insights. Date selection updates proportional demo totals. Search, format and
+topic filters apply only to the five supplied post records, using their original publication
+dates; the other 43 posts are not fabricated. Sorting, page size, post/topic details, CSV and
+print/PDF work with the selected period and filters. Printed reports include all matching
+sample rows, even when the screen table is paginated. ER and CTR derive from the raw counts.
+
 The compiled stylesheet, fonts, icons and logo are served locally; no Tailwind CDN or
 external chart library is needed by `/overview`, `/report/seo` or `/report/facebook-ads`. To rebuild styles after changing
 templates or `static/css/shared/dashboard.source.css`:
@@ -96,6 +104,25 @@ npm run build:css
 ```
 
 Run backend checks with `python -m pytest -q`.
+
+## TikTok Ads và YouTube
+
+- `/report/tiktok` (alias `/report/tiktok-ads`): KPI, phễu chuyển đổi, biểu đồ chi tiêu/Leads, chiến dịch, video tiêu biểu và đề xuất theo HTML TikTok.
+- `/report/youtube`: KPI, biểu đồ lượt xem/thời gian xem, video tiêu biểu, khán giả, nguồn truy cập, từ khóa, phễu và kế hoạch theo HTML YouTube.
+- Hai trang dùng chung layout và menu con xổ xuống. Có bộ lọc kỳ báo cáo, tìm kiếm/sắp xếp bảng, popup chi tiết, so sánh, CSV và In/Lưu PDF. Các bộ lọc được giữ trong URL.
+- API: `/api/v1/video-reports/tiktok` và `/api/v1/video-reports/youtube`; thêm `/export` để tải CSV. FE gọi backend qua các endpoint này.
+- Dữ liệu vẫn là mẫu; lớp kiểm tra API thật trong `scripts/real_data_tests/` hoạt động độc lập. KPI kỳ khác được mô phỏng theo số ngày. TikTok tổng hợp từ ba chiến dịch mẫu; CTR trong thiết kế này là Clicks/Reach, tỷ lệ trên các thanh phễu tính theo Impressions. Không dùng các định nghĩa mẫu này để đối soát API quảng cáo thật.
+- YouTube chỉ có bốn video tiêu biểu trong HTML, không tạo thêm 20 video để đủ nhãn 24. Bộ lọc ngày áp dụng theo ngày đăng của bốn video; KPI toàn kênh và các video tiêu biểu là các mẫu độc lập. Kế hoạch YouTube chỉ lưu lựa chọn trên trình duyệt, không gửi phê duyệt đến hệ thống bên ngoài.
+- CSS, biểu đồ SVG, font và thumbnail phục vụ tại máy chủ; không cần CDN khi mở trang.
+
+Chạy riêng dự án này từ `D:\KDH-Report-New`:
+
+```powershell
+docker compose up -d --build
+```
+
+Mở `http://127.0.0.1:8080/report/tiktok` hoặc `http://127.0.0.1:8080/report/youtube`.
+Compose project là `kdh-report-new`, không gộp với dự án `KDH-Report` khác.
 
 ## Project structure
 
@@ -126,6 +153,9 @@ templates/
       index.html
       controls.html
       partials/             # KPIs, campaigns, funnel, audience, creatives, insights
+    tiktok/                 # TikTok entry point, campaign/video/insight partials
+    youtube/                # YouTube entry point, videos/audience/insight partials
+    video/                  # Shared video report base, KPI/funnel/chart partials
     report/
       index.html            # Generic channel report
 static/

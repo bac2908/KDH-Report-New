@@ -1,0 +1,7 @@
+{% from 'pages/facebook_content/partials/helpers.html' import n, pct, heading %}
+{{ heading('Phân Bổ Định Dạng Nội Dung', 'donut_large', 'Tỷ lệ bài đăng và hiệu quả tương tác phân theo định dạng media.') }}
+<div class="fc-format-list">{% for row in fb_content.formats %}
+<div class="fc-bar-row fc-color-{{ loop.index }}"><div class="fc-bar-label"><span><i></i>{{ row.label }}</span><strong>{{ row.count }} bài ({{ pct(row.percent) }})</strong></div><div class="fc-track"><span style="inline-size:{{ row.percent }}%"></span></div><div class="fc-bar-caption"><span>Reach TB: {{ n(row.avg_reach) }} / bài</span><span>ER: {{ pct(row.er) }}</span></div></div>
+{% endfor %}</div>
+<div class="fc-panel-footer"><span>Định dạng nổi bật: Reels</span><strong>+42% reach theo mẫu</strong></div>
+<p class="fc-note">Phân nhóm định dạng theo thiết kế; bảng bài mẫu có thêm Livestream. Reach từng bài có thể trùng người xem.</p>

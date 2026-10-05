@@ -2,6 +2,7 @@ from __future__ import annotations
 
 from typing import Any, Dict
 from datetime import date
+from warnings import filters
 
 from app.repositories.reports import ReportRepository
 
@@ -18,6 +19,20 @@ class ReportService:
 
     def get_facebook_ads(self, **filters) -> Dict[str, Any]:
         return self.repository.get_facebook_ads(**filters)
+
+    def get_facebook_content(
+        self,
+        **filters,
+    ) -> Dict[str, Any]:
+        return (
+            self.repository
+            .get_facebook_content(
+                **filters
+            )
+        )
+
+    def get_video(self, channel: str, **filters) -> Dict[str, Any]:
+        return self.repository.get_video(channel, **filters)
 
     def get_report(self, report_type: str, filters: Dict[str, Any] | None = None) -> Dict[str, Any]:
         return self.repository.get_report(report_type=report_type, filters=filters)

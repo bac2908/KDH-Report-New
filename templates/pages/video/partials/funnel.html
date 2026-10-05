@@ -1,0 +1,9 @@
+{% from 'pages/video/partials/helpers.html' import num, pct, compact, icon %}
+{% if video.channel == 'tiktok' %}
+<div class="vd-panel-head"><h2>Phễu Chuyển Đổi TikTok Ads</h2>{{ icon('filter_alt') }}</div>
+<div class="vd-funnel-bars">{% for row in video.funnel %}<div><div class="vd-bar-label"><span>{{ loop.index }}. {{ row.label }}</span><span>{{ num(row.value) }} <small>({{ pct(row.percent) }})</small></span></div><div class="vd-bar"><i class="vd-bg-{{ row.color }}" style="width:{{ row.percent }}%"></i></div></div>{% endfor %}</div>
+<div class="vd-panel-foot"><span>Tỷ lệ chuyển đổi tổng (CR):</span><strong>{{ pct(video.funnel[-1].percent) }} (Imp → Lead)</strong></div>
+{% else %}
+<div class="vd-panel-head"><div><h2>Phễu Chuyển Đổi Từ YouTube Về Hệ Thống</h2><p>Theo dõi hành trình từ người xem video đến khách hàng đặt lịch khám tại KinderHealth</p></div></div>
+<div class="vd-funnel-steps">{% for row in video.funnel %}<div class="vd-funnel-step vd-border-{{ row.color }}"><small>BƯỚC {{ loop.index }}</small><h3>{{ row.label }}</h3><strong class="vd-text-{{ row.color }}">{{ compact(row.value) if loop.first else num(row.value) }}</strong><span class="vd-text-green">{{ '100% lượt xem' if loop.first else 'Tỷ lệ: ' ~ pct(row.percent) }}</span><p>{{ row.description }}</p></div>{% endfor %}</div>
+{% endif %}

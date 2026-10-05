@@ -7,6 +7,7 @@ from pathlib import Path
 from app.routes.health import router as health_router
 from app.routes.pages import router as pages_router
 from app.routes.reports import router as reports_router
+from app.routes.video import router as video_router
 
 BASE_DIR = Path(__file__).resolve().parent
 
@@ -18,6 +19,7 @@ app = FastAPI(
 
 app.mount("/static", StaticFiles(directory=str(BASE_DIR / "static")), name="static")
 app.include_router(health_router)
+app.include_router(video_router)
 app.include_router(pages_router)
 app.include_router(reports_router)
 

@@ -2,6 +2,7 @@ from __future__ import annotations
 
 from typing import Any, Dict
 from datetime import date
+from warnings import filters
 
 from app.integrations.mock.generator import build_overview_payload, build_report_payload
 
@@ -17,7 +18,21 @@ class ReportRepository:
 
     def get_facebook_ads(self, **filters) -> Dict[str, Any]:
         from app.integrations.mock.facebook_ads import facebook_ads_payload
+
         return facebook_ads_payload(**filters)
+
+    def get_facebook_content(self, **filters) -> Dict[str, Any]:
+        from app.integrations.mock.facebook_content import (
+            facebook_content_payload,
+        )
+
+        return facebook_content_payload(**filters)
+
+    def get_video(self, channel: str, **filters) -> Dict[str, Any]:
+        from app.integrations.mock.video import video_payload
+
+        return video_payload(channel, **filters)
 
     def get_report(self, report_type: str, filters: Dict[str, Any] | None = None) -> Dict[str, Any]:
         return build_report_payload(report_type=report_type, filters=filters or {})
+    

@@ -1,114 +1,134 @@
-<header class="fixed top-0 left-[280px] right-0 h-32 bg-surface-container-lowest/95 backdrop-blur-md border-b border-outline-variant/40 z-40 flex flex-col justify-between shadow-[0_1px_8px_rgba(0,0,0,0.03)] dashboard-header">
- <div class="h-16 px-space-lg flex items-center justify-between border-b border-outline-variant/30 header-top">
-  <button aria-controls="dashboard-sidebar" aria-expanded="false" aria-label="Mở menu báo cáo" class="sidebar-toggle" id="sidebar-toggle" type="button">
-   <span aria-hidden="true" class="material-symbols-outlined">
-    menu
-   </span>
-  </button>
-  <div class="flex items-center gap-space-md">
-   <img alt="KDH Traffic Report Logo" class="h-8 w-auto object-contain lg:hidden" height="32" src="/static/img/kdh-logo.png" width="32"/>
-   <button aria-label="Thông tin nguồn dữ liệu" class="flex items-center gap-2 px-space-sm py-1.5 rounded-lg bg-surface-container-low border border-outline-variant/50 text-on-surface hover:bg-surface-container-high transition-colors font-body-sm text-body-sm" id="data-source" type="button">
-    <span aria-hidden="true" class="material-symbols-outlined text-[16px] text-primary">
-     sync_alt
-    </span>
-    <span>
-     Nguồn dữ liệu:
-     <strong>
-      Tổng hợp dữ liệu Marketing
-     </strong>
-    </span>
-    <span aria-hidden="true" class="material-symbols-outlined text-[16px] text-outline">
-     expand_more
-    </span>
-   </button>
-  </div>
-  <div class="flex items-center gap-space-md">
-   <div class="hidden md:flex items-center gap-2 px-2.5 py-1 rounded-full bg-surface-container-low border border-outline-variant/40 data-status">
-    <span class="inline-block w-2 h-2 rounded-full bg-[#15803d]">
-    </span>
-    <span class="font-label-sm text-label-sm text-on-surface-variant font-medium">
-     Đang xem dữ liệu mẫu
-    </span>
-   </div>
-   <div class="hidden xl:flex items-center gap-1 font-body-sm text-body-sm text-outline last-updated">
-    <span aria-hidden="true" class="material-symbols-outlined text-[16px]">
-     schedule
-    </span>
-    <span>
-     Cập nhật lần cuối: 02/10/2026 15:30
-    </span>
-   </div>
-   <button aria-controls="export-menu" aria-expanded="false" aria-haspopup="true" class="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-primary hover:bg-primary-container text-on-primary font-body-sm text-body-sm font-medium transition-colors shadow-[0_4px_14px_rgba(0,81,170,0.25)]" id="export-report" type="button">
-    <span aria-hidden="true" class="material-symbols-outlined text-[16px]">
-     download
-    </span>
-    <span>
-     Xuất báo cáo PDF/Excel
-    </span>
-   </button>
-   <div class="flex items-center gap-2 pl-space-xs">
-    <div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center">
-     <span aria-hidden="true" class="material-symbols-outlined text-on-primary text-[18px]">
-      person
-     </span>
+<header
+    class="fixed top-0 left-[280px] right-0 h-32 bg-surface-container-lowest/95 backdrop-blur-md border-b border-outline-variant/40 z-40 flex flex-col justify-between shadow-[0_1px_8px_rgba(0,0,0,0.03)] dashboard-header">
+    <div class="h-16 px-space-lg flex items-center justify-between border-b border-outline-variant/30 header-top">
+        <button aria-controls="dashboard-sidebar" aria-expanded="false" aria-label="Mở menu báo cáo"
+            class="sidebar-toggle" id="sidebar-toggle" type="button">
+            <span aria-hidden="true" class="material-symbols-outlined">
+                menu
+            </span>
+        </button>
+        <div class="flex items-center gap-space-md">
+            <img alt="KDH Traffic Report Logo" class="h-10 w-10 shrink-0 object-contain lg:hidden" height="40"
+                src="/static/img/kdh-logo.png" width="40" />
+            <button aria-label="Thông tin nguồn dữ liệu"
+                class="flex items-center gap-2 px-space-sm py-1.5 rounded-lg bg-surface-container-low border border-outline-variant/50 text-on-surface hover:bg-surface-container-high transition-colors font-body-sm text-body-sm"
+                id="data-source" type="button">
+                <span aria-hidden="true" class="material-symbols-outlined text-[16px] text-primary">
+                    sync_alt
+                </span>
+                <span>
+                    Nguồn dữ liệu:
+                    <strong>
+                        Tổng hợp dữ liệu Marketing
+                    </strong>
+                </span>
+                <span aria-hidden="true" class="material-symbols-outlined text-[16px] text-outline">
+                    expand_more
+                </span>
+            </button>
+        </div>
+        <div class="flex items-center gap-space-md">
+            <div
+                class="hidden md:flex items-center gap-2 px-2.5 py-1 rounded-full bg-surface-container-low border border-outline-variant/40 data-status">
+                <span class="inline-block w-2 h-2 rounded-full bg-[#15803d]">
+                </span>
+                <span class="font-label-sm text-label-sm text-on-surface-variant font-medium">
+                    Đang xem dữ liệu mẫu
+                </span>
+            </div>
+            <div class="hidden xl:flex items-center gap-1 font-body-sm text-body-sm text-outline last-updated">
+                <span aria-hidden="true" class="material-symbols-outlined text-[16px]">
+                    schedule
+                </span>
+                <span>
+                    Cập nhật lần cuối: 02/10/2026 15:30
+                </span>
+            </div>
+            <button aria-controls="export-menu" aria-expanded="false" aria-haspopup="true"
+                class="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-primary hover:bg-primary-container text-on-primary font-body-sm text-body-sm font-medium transition-colors shadow-[0_4px_14px_rgba(0,81,170,0.25)]"
+                id="export-report" type="button">
+                <span aria-hidden="true" class="material-symbols-outlined text-[16px]">
+                    download
+                </span>
+                <span>
+                    Xuất báo cáo PDF/Excel
+                </span>
+            </button>
+            <div class="flex items-center gap-2 pl-space-xs">
+                <div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center">
+                    <span aria-hidden="true" class="material-symbols-outlined text-on-primary text-[18px]">
+                        person
+                    </span>
+                </div>
+                <div class="hidden lg:flex flex-col text-left">
+                    <span class="font-label-md text-label-md text-on-surface leading-tight">
+                        Account Manager
+                    </span>
+                    <span class="font-label-sm text-label-sm text-outline leading-tight">
+                        KDH Agency
+                    </span>
+                </div>
+            </div>
+        </div>
     </div>
-    <div class="hidden lg:flex flex-col text-left">
-     <span class="font-label-md text-label-md text-on-surface leading-tight">
-      Account Manager
-     </span>
-     <span class="font-label-sm text-label-sm text-outline leading-tight">
-      KDH Agency
-     </span>
+    <div class="h-16 px-space-lg flex items-center justify-between gap-space-md overflow-x-auto header-filters">
+        <div class="flex items-center gap-space-md shrink-0">
+            <span class="font-label-sm text-label-sm text-on-surface-variant font-medium uppercase tracking-wide">
+                Khoảng thời gian:
+            </span>
+            <div aria-label="Khoảng thời gian báo cáo"
+                class="flex items-center bg-surface-container-low p-1 rounded-lg border border-outline-variant/40 text-on-surface-variant font-body-sm text-body-sm"
+                id="period-switcher">
+                <button aria-pressed="false" class="px-3 py-1 rounded hover:text-on-surface transition-colors"
+                    data-period="7" type="button">
+                    7 ngày
+                </button>
+                <button aria-pressed="true"
+                    class="px-3 py-1 rounded bg-surface-container-lowest text-primary font-semibold shadow-sm"
+                    data-period="30" type="button">
+                    30 ngày
+                </button>
+                <button aria-pressed="false" class="px-3 py-1 rounded hover:text-on-surface transition-colors"
+                    data-period="90" type="button">
+                    3 tháng
+                </button>
+                <button aria-pressed="false" class="px-3 py-1 rounded hover:text-on-surface transition-colors"
+                    data-period="180" type="button">
+                    6 tháng
+                </button>
+                <button aria-pressed="false" class="px-3 py-1 rounded hover:text-on-surface transition-colors"
+                    data-period="custom" type="button">
+                    Tùy chỉnh
+                </button>
+            </div>
+            <button
+                class="flex items-center gap-1.5 px-3 py-1.5 bg-surface-container-lowest border border-outline-variant/60 rounded-lg font-body-sm text-body-sm text-on-surface"
+                id="date-range" type="button">
+                <span aria-hidden="true" class="material-symbols-outlined text-[16px] text-primary">
+                    calendar_today
+                </span>
+                <span class="font-medium" id="date-range-label">
+                    01/09/2026 – 30/09/2026
+                </span>
+            </button>
+        </div>
+        <div class="flex items-center gap-2 shrink-0">
+            <span class="font-label-sm text-label-sm text-on-surface-variant font-medium uppercase tracking-wide">
+                So sánh:
+            </span>
+            <button aria-pressed="true"
+                class="flex items-center gap-1.5 px-3 py-1.5 bg-surface-container-lowest border border-outline-variant/60 rounded-lg font-body-sm text-body-sm text-on-surface hover:bg-surface-container-low transition-colors"
+                id="comparison" type="button">
+                <span class="font-medium">
+                    Kỳ trước
+                </span>
+                <span class="text-outline" id="comparison-label">
+                    (02/08/2026 – 31/08/2026)
+                </span>
+                <span aria-hidden="true" class="material-symbols-outlined text-[16px] text-outline">
+                    arrow_drop_down
+                </span>
+            </button>
+        </div>
     </div>
-   </div>
-  </div>
- </div>
- <div class="h-16 px-space-lg flex items-center justify-between gap-space-md overflow-x-auto header-filters">
-  <div class="flex items-center gap-space-md shrink-0">
-   <span class="font-label-sm text-label-sm text-on-surface-variant font-medium uppercase tracking-wide">
-    Khoảng thời gian:
-   </span>
-   <div aria-label="Khoảng thời gian báo cáo" class="flex items-center bg-surface-container-low p-1 rounded-lg border border-outline-variant/40 text-on-surface-variant font-body-sm text-body-sm" id="period-switcher">
-    <button aria-pressed="false" class="px-3 py-1 rounded hover:text-on-surface transition-colors" data-period="7" type="button">
-     7 ngày
-    </button>
-    <button aria-pressed="true" class="px-3 py-1 rounded bg-surface-container-lowest text-primary font-semibold shadow-sm" data-period="30" type="button">
-     30 ngày
-    </button>
-    <button aria-pressed="false" class="px-3 py-1 rounded hover:text-on-surface transition-colors" data-period="90" type="button">
-     3 tháng
-    </button>
-    <button aria-pressed="false" class="px-3 py-1 rounded hover:text-on-surface transition-colors" data-period="180" type="button">
-     6 tháng
-    </button>
-    <button aria-pressed="false" class="px-3 py-1 rounded hover:text-on-surface transition-colors" data-period="custom" type="button">
-     Tùy chỉnh
-    </button>
-   </div>
-   <button class="flex items-center gap-1.5 px-3 py-1.5 bg-surface-container-lowest border border-outline-variant/60 rounded-lg font-body-sm text-body-sm text-on-surface" id="date-range" type="button">
-    <span aria-hidden="true" class="material-symbols-outlined text-[16px] text-primary">
-     calendar_today
-    </span>
-    <span class="font-medium" id="date-range-label">
-     01/09/2026 – 30/09/2026
-    </span>
-   </button>
-  </div>
-  <div class="flex items-center gap-2 shrink-0">
-   <span class="font-label-sm text-label-sm text-on-surface-variant font-medium uppercase tracking-wide">
-    So sánh:
-   </span>
-   <button aria-pressed="true" class="flex items-center gap-1.5 px-3 py-1.5 bg-surface-container-lowest border border-outline-variant/60 rounded-lg font-body-sm text-body-sm text-on-surface hover:bg-surface-container-low transition-colors" id="comparison" type="button">
-    <span class="font-medium">
-     Kỳ trước
-    </span>
-    <span class="text-outline" id="comparison-label">
-     (02/08/2026 – 31/08/2026)
-    </span>
-    <span aria-hidden="true" class="material-symbols-outlined text-[16px] text-outline">
-     arrow_drop_down
-    </span>
-   </button>
-  </div>
- </div>
 </header>
